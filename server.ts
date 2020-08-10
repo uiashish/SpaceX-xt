@@ -23,7 +23,9 @@ import {join} from 'path';
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+
+const PORT = process.env.PORT || 8080;
+app.set('port',PORT);
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
