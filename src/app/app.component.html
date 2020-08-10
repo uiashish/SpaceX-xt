@@ -12,22 +12,26 @@
                     <div class="lable-container">
                         <p class="lable">Launch Year</p>
                         <ul>
-                            <li *ngFor="let year of launch_years"><button
+                            <li *ngFor="let year of launch_years"><button [class.active]="launch_year==year"
                                     (click)="index({launch_year: year})">{{ year }}</button></li>
                         </ul>
                     </div>
                     <div class="lable-container">
                         <p class="lable">Successful Launch</p>
                         <ul>
-                            <li><button (click)="index({launch_success: true})">True</button></li>
-                            <li><button (click)="index({launch_success: false})">False</button></li>
+                            <li><button [class.active]="(launch_success !== '' && !!launch_success)"
+                                    (click)="index({launch_success: true})">True</button></li>
+                            <li><button [class.active]="(launch_success !== '' && !launch_success)"
+                                    (click)="index({launch_success: false})">False</button></li>
                         </ul>
                     </div>
                     <div class="lable-container">
                         <p class="lable">Successful Landing</p>
                         <ul>
-                            <li><button (click)="index({land_success: true})">True</button></li>
-                            <li><button (click)="index({land_success: false})">False</button></li>
+                            <li><button [class.active]="(land_success !=='' && !!land_success)"
+                                    (click)="index({land_success: true})">True</button></li>
+                            <li><button [class.active]="(land_success !== '' && !land_success)"
+                                    (click)="index({land_success: false})">False</button></li>
 
                         </ul>
                     </div>
@@ -47,17 +51,26 @@
 
                 <!-- mission Start -->
                 <!-- ****** Loop Start ****** -->
-
+                <div *ngIf="!dataSource.length" class="blank"> Space is Empty </div>
                 <div class="mission__card bg-white" *ngFor="let data of dataSource">
                     <div class="misson__img__wrap">
                         <img src="{{ data.links.mission_patch_small }}" alt="img">
                     </div>
                     <div class="mission__info">
                         <p class="mission__info__name">{{ data.mission_name }} # {{data.flight_number}}</p>
-                        <p class="mission__info__id"><span>Mission ID: </span> {{ data.mission_id[0] }}</p>
+                        <p class="mission__info__id"><span>Mission ID: </span> 
+                            <span *ngIf="data.mission_id.length">
+                                <ul>
+                                    <li *ngFor="let list of data.mission_id">
+                                        {{list}}
+                                    </li>
+                                </ul>
+                            </span></p>
                         <p class="mission__info__launch-yr"><span>Launch Year: </span> {{ data.launch_year }}</p>
-                        <p class="mission__info__launch-type"><span>Successful Launch: </span> {{ data.launch_success }}</p>
-                        <p class="mission__info__land-type"> <span>Successful Landing:  </span> {{ data.launch_Landing }}</p>
+                        <p class="mission__info__launch-type"><span>Successful Launch: </span> {{ data.launch_success }}
+                        </p>
+                        <p class="mission__info__land-type"> <span>Successful Landing: </span> {{ data.launch_Landing }}
+                        </p>
                     </div>
                 </div>
 
