@@ -1,0 +1,163 @@
+
+  /*  */
+  .container{
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1440px;
+      
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;    
+    margin-right: -12px;
+    margin-left: -12px;
+  }
+  .col{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+  }
+  .col-1{
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  .col-2 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  
+  /*  */
+  
+  
+  button{
+    background-color: #CCDF9D;
+    border:none;
+    padding: 6px 12px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 6px;
+  }
+  button.active{
+    background-color: #90B942;
+  }
+  .filter{
+    background: #fff;
+    padding: 12px;
+    margin: 6px;
+    border-radius: 6px;
+  }
+  .lable-container{
+      margin: 6px 0s;
+  }
+  .lable-container .lable{
+      position: relative;
+      text-align: center;
+      color: #333;
+      margin: 12px 0 3px;
+  }
+  .lable-container .lable:before{
+      width: 66%;
+      position: absolute;
+      left: 16%;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      background-color: #333;
+  }
+  .lable-container ul li{
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+  }
+  .mission__info{
+      padding: 12px;
+  }
+  .mission__info p{
+      margin: 8px 0;
+  }
+  .mission__info p span{
+      font-weight: bold;
+      display: inline-block;
+      width: 82px;
+  }
+  .mission__info__name{
+    color: #4B508E;
+    font-size: 18px;
+  }
+  .bg-white{
+    background: #fff;
+  } 
+  .mission {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mission__card {
+    padding: 12px;
+    flex: 1 0 22%;
+    margin: 6px;
+    display: flex; /* so child elements can use flexbox stuff too! */
+    flex-direction: column;
+    border-radius: 3px;
+  }
+  .misson__img__wrap{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: auto;
+  }
+  .misson__img__wrap >img{
+      max-width: 100%;
+      margin: 0 auto;
+      display: block;
+  }
+  .misson__img__wrap >img:before {
+    content: 'Img not Avilable';
+    display: block;
+    height: 230Px;
+    width: 150px;
+    background: #f2f2f2;
+    line-height: 230Px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    top: 18px;
+}
+  @media (max-width: 1024px) {
+    .mission__card {
+      flex: 1 24%;
+    }
+    .col-1,
+    .col-2{
+        max-width: 100%;
+    }
+    .col-1{
+        width: 25%;
+        flex: 0 0 25%;
+
+    }
+    .col-2{
+        width: 75%;
+        flex: 0 0 75%;
+    }
+
+  }
+  @media (max-width: 700px) {
+    .mission__card {
+      flex: 1 51%;
+    }
+    .col-1,
+    .col-2{
+        width: 100%;
+        flex: 0 0 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+  }

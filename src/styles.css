@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+    background-color: #F2F2F2;
+    color: #212121;
+    line-height: 1.4;
+  }
+  ul>li{
+    list-style: none;
+  }
+  h1{
+      line-height: 1.5;
+  }
+  h4{
+      line-height: 1.2;
+    margin: 20px 0;
+  }
+  .pl-0{
+      padding-left: 0 !important;
+  }
+  .pr-0{
+      padding-right: 0 !important;
+  }
+  .text-center{
+      text-align: center;
+  }
+  
+  

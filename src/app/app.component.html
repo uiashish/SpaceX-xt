@@ -1,0 +1,75 @@
+<div class="container main">
+    <div class="row">
+        <div class="col">
+            <h1>SpaceX Launch Programs</h1>
+        </div>
+        <div class="col col-1 pr-0">
+            <!-- Side col Start -->
+            <aside class="sidebar">
+                <!-- Filter Start -->
+                <div class="filter">
+                    <h3 class="title">Filters</h3>
+                    <div class="lable-container">
+                        <p class="lable">Launch Year</p>
+                        <ul>
+                            <li *ngFor="let year of launch_years"><button
+                                    (click)="index({launch_year: year})">{{ year }}</button></li>
+                        </ul>
+                    </div>
+                    <div class="lable-container">
+                        <p class="lable">Successful Launch</p>
+                        <ul>
+                            <li><button (click)="index({launch_success: true})">True</button></li>
+                            <li><button (click)="index({launch_success: false})">False</button></li>
+                        </ul>
+                    </div>
+                    <div class="lable-container">
+                        <p class="lable">Successful Landing</p>
+                        <ul>
+                            <li><button (click)="index({land_success: true})">True</button></li>
+                            <li><button (click)="index({land_success: false})">False</button></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- Filter End -->
+            </aside>
+        </div>
+        <!-- Side col End -->
+
+        <!-- Main Col Start -->
+
+        <div class="col col-2 pl-0">
+            <section class="mission">
+
+
+                <!-- mission Start -->
+                <!-- ****** Loop Start ****** -->
+
+                <div class="mission__card bg-white" *ngFor="let data of dataSource">
+                    <div class="misson__img__wrap">
+                        <img src="{{ data.links.mission_patch_small }}" alt="img">
+                    </div>
+                    <div class="mission__info">
+                        <p class="mission__info__name">{{ data.mission_name }} # {{data.flight_number}}</p>
+                        <p class="mission__info__id"><span>Mission ID: </span> {{ data.mission_id[0] }}</p>
+                        <p class="mission__info__launch-yr"><span>Launch Year: </span> {{ data.launch_year }}</p>
+                        <p class="mission__info__launch-type"><span>Successful Launch: </span> {{ data.launch_success }}</p>
+                        <p class="mission__info__land-type"> <span>Successful Landing:  </span> {{ data.launch_Landing }}</p>
+                    </div>
+                </div>
+
+                <!-- mission End -->
+                <!-- ****** Loop End ****** -->
+            </section>
+        </div>
+        <!-- Main Col end -->
+        <div class="col text-center">
+            <h4><b>Developed By: </b> Ashish Kumar Singh</h4>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
