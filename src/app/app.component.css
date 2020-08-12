@@ -28,7 +28,15 @@
     flex: 0 0 83.333333%;
     max-width: 83.333333%;
   }
-  
+  .blank{
+    align-self: center;
+    background: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    align-content: center;
+    margin-left: 12px;
+  }
   /*  */
   
   
