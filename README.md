@@ -41,5 +41,7 @@ the content will be centered align with a max width of 1440.
 # BEM implimented
 classes like `.mission` `.mission__card` `.mission__info` `.mission__info--name`
 
+# Accessibility Added
+
 # Preview Link
 [Spacex Angular Project]https://spacex-sap-xt.herokuapp.com/
